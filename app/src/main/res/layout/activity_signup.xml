@@ -4,15 +4,159 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context=".SignupActivity">
 
-    <TextView
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signupid_layout"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toStartOf="@id/checkid"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/signuppassword_layout"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signupid"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="ID"
+            android:selectAllOnFocus="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/checkid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SignUpActivity"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="checkID"
+        app:layout_constraintBottom_toTopOf="@+id/signuppassword_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.689" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signuppassword_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/signupid_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signuppassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password "
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/checkpassword_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signuppassword_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/checkpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Check Password "
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkpassword_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name "
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tel "
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/summitsignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="signup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tel_layout"
+        app:layout_constraintVertical_bias="0.074" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
