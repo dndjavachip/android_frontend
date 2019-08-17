@@ -19,7 +19,7 @@ import java.net.URL;
 
 
 
-public class JSONTask extends AsyncTask<String, String, String> {
+public class SignupTask extends AsyncTask<String, String, String> {
 
     EditText temp;
     @Override
@@ -98,9 +98,6 @@ public class JSONTask extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        System.out.println(result);
+        //System.out.println(result);
     }
 }
-
-
-

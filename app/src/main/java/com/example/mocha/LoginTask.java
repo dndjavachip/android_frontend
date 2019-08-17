@@ -1,9 +1,7 @@
 package com.example.mocha;
 
 import android.os.AsyncTask;
-import android.widget.EditText;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -21,7 +19,6 @@ import java.net.URL;
 
 public class LoginTask extends AsyncTask<String, String, String> {
 
-    EditText temp;
     @Override
     protected String doInBackground(String... urls) {
         try {
@@ -98,9 +95,5 @@ public class LoginTask extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-
     }
 }
-
-
-

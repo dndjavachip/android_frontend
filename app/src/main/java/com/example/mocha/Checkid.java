@@ -83,18 +83,7 @@ import java.net.URL;
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        try {
-            JSONObject res = new JSONObject(result);
-            String checkresult = res.getString("user_check");
-            System.out.println(checkresult);
 
-            if(checkresult.equals("false")) {
-                SignupActivity.check = false;
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
         //
 
 
