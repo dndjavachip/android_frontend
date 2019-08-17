@@ -24,7 +24,7 @@ public class MainTask extends AsyncTask<String, String, String> {
             try {
                 URL url = new URL("https://dnd-javachip.appspot.com/auth/refresh/");
                 String s = CookieManager.getInstance().getCookie("https://dnd-javachip.appspot.com/auth/login/");
-                System.out.println("@#@#@#SS:"+s);
+                //System.out.println("@#@#@#SS:"+s);
                 con = (HttpURLConnection) url.openConnection();
 
                 con.setRequestProperty("x-access-token",s);
@@ -43,47 +43,40 @@ public class MainTask extends AsyncTask<String, String, String> {
 
                 //line별 스트링을 받기 위한 temp 변수
                 String line = "";
-
-//아래라인은 실제 reader에서 데이터를 가져오는 부분이다. 즉 node.js서버로부터 데이터를 가져온다.
+                //아래라인은 실제 reader에서 데이터를 가져오는 부분이다. 즉 node.js서버로부터 데이터를 가져온다.
                 while ((line = reader.readLine()) != null) {
                         buffer.append(line);
                         }
 
-                        //다 가져오면 String 형변환을 수행한다. 이유는 protected String doInBackground(String... urls) 니까
-                        System.out.println("@@@@buffer"+buffer.toString());
-                        return buffer.toString();
+                //다 가져오면 String 형변환을 수행한다. 이유는 protected String doInBackground(String... urls) 니까
+                // System.out.println("@@@@buffer"+buffer.toString());
+                return buffer.toString();
 
-                        //아래는 예외처리 부분이다.
-                        } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                        } catch (IOException e) {
-                        e.printStackTrace();
-                        } finally {
-                        //종료가 되면 disconnect메소드를 호출한다.
-                        if (con != null) {
-                        con.disconnect();
+                //아래는 예외처리 부분이다.
+            }
+            catch (MalformedURLException e) {
+                e.printStackTrace(); }
+            catch (IOException e) {
+                e.printStackTrace(); }
+            finally { //종료가 되면 disconnect메소드를 호출한다.
+                if (con != null) {
+                    con.disconnect(); }
+                try { //버퍼를 닫아준다.
+                    if (reader != null) {
+                        reader.close(); }
                         }
-                        try {
-                        //버퍼를 닫아준다.
-                        if (reader != null) {
-                        reader.close();
-                        }
-                        } catch (IOException e) {
-                        e.printStackTrace();
-                        }
-                        }//finally 부분
-                        } catch (Exception e) {
-                        e.printStackTrace();
-                        }
-                        return null;
+                catch (IOException e) {
+                        e.printStackTrace(); }
+                    }//finally 부분
+            }
+        catch (Exception e) {
+            e.printStackTrace(); }
+        return null;
 
-                        }
+    }
 
 //doInBackground메소드가 끝나면 여기로 와서 텍스트뷰의 값을 바꿔준다.
 @Override
 protected void onPostExecute(String result) {
-        super.onPostExecute(result);
-        }
-
-
+        super.onPostExecute(result); }
         }
