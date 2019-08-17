@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 try {
                     String result = new LoginTask().execute(usernameInput.getText().toString(),passwordInput.getText().toString()).get();
                     JSONObject res = new JSONObject(result);
-                    checkresult = res.getString("status");
+                    checkresult = res.getString("token");
                     //System.out.println(checkresult);
 
                 } catch (ExecutionException e) {
@@ -75,9 +75,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     e.printStackTrace();
                 }
 
-                if(checkresult.equals("success")) {
+                if(!checkresult.equals("empty")) {
                     Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intentMain);
+
 
                 }
                 else {
@@ -85,21 +86,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 }
 
+                break;
 
-
-
-               /* usernameInput = (EditText) findViewById(R.id.username);
-                String name = usernameInput.getText().toString();
-                passwordInput = (EditText) findViewById(R.id.password);
-                intentMain.putExtra("my_data",name);*/
-                //Toast.makeText(getApplicationContext(), "break직전", Toast.LENGTH_LONG).show();
-                break; //엑티비티 전환후 break문이 실행되는지.
-
-            case R.id.signup:
+            case R.id.signup: //회원가입화면 전환
                 Intent intentSignUp = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivity(intentSignUp);
-                //Toast.makeText(getApplicationContext(), "break직전", Toast.LENGTH_LONG).show();
-                break; //엑티비티 전환후 break문이 실행되는지.
+                break;
 
         }
 
