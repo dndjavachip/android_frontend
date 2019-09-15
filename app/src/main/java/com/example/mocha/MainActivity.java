@@ -6,11 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerview;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
+    List<CardModel> datas = new ArrayList<>();
 
 
     @Override
@@ -21,8 +25,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerview.hasFixedSize();
         layoutManager = new LinearLayoutManager(this);
         recyclerview.setLayoutManager(layoutManager);
+        datas.add(new CardModel("test",0));
+        datas.add(new CardModel("test",3));
+        datas.add(new CardModel("test",1));
+        datas.add(new CardModel("test",1));
 
-        adapter = new ListAdapter();
+
+
+        adapter = new ListAdapter(this,datas);
         recyclerview.setAdapter(adapter);
 
 
