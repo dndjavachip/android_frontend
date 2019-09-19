@@ -24,14 +24,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intent =getIntent();
-
-
+        String[] address_raw = intent.getExtras().getStringArray("address");
+        String address = address_raw[2]+" "+address_raw[3]+" "+address_raw[4];
+        String[] card0_raw = {address,intent.getExtras().getString("username")};
 
         recyclerview = findViewById(R.id.main_recycler);
         recyclerview.hasFixedSize();
         layoutManager = new LinearLayoutManager(this);
         recyclerview.setLayoutManager(layoutManager);
-        datas.add(new CardModel(intent.getExtras().getString("username"),0));
+        datas.add(new CardModel(card0_raw,0));
         datas.add(new CardModel("test",3));
         datas.add(new CardModel("test",1));
         datas.add(new CardModel("test",1));
@@ -40,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerview.setAdapter(adapter);
 
 
-
-
-
         new MainTask().execute();
-}}
+}
+
+
+    }
+
 

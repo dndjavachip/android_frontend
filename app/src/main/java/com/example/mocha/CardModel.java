@@ -4,6 +4,7 @@ package com.example.mocha;
 public class CardModel {
 
     String text;
+    String[] array;
     int viewType;
 
     public CardModel(String text, int viewType) {
@@ -11,8 +12,17 @@ public class CardModel {
         this.viewType = viewType;
     }
 
+    public CardModel(String[] textarrays,int viewType) {
+        this.array = textarrays;
+        this.viewType = viewType;
+    }
+
     public String getText() {
         return text;
+    }
+
+    public String[] getArray() {
+        return array;
     }
 
     public void setText(String text) {
