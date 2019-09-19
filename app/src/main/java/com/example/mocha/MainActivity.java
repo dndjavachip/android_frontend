@@ -1,5 +1,6 @@
 package com.example.mocha;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,16 +22,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent =getIntent();
+
+
+
         recyclerview = findViewById(R.id.main_recycler);
         recyclerview.hasFixedSize();
         layoutManager = new LinearLayoutManager(this);
         recyclerview.setLayoutManager(layoutManager);
-        datas.add(new CardModel("test",0));
+        datas.add(new CardModel(intent.getExtras().getString("username"),0));
         datas.add(new CardModel("test",3));
         datas.add(new CardModel("test",1));
         datas.add(new CardModel("test",1));
-
-
 
         adapter = new ListAdapter(this,datas);
         recyclerview.setAdapter(adapter);

@@ -3,10 +3,12 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_margin="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp"
     app:cardBackgroundColor="#ffffff"
     app:cardElevation="3dp"
-    card_view:cardCornerRadius="20dp"
+    card_view:cardCornerRadius="5dp"
     card_view:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -19,10 +21,11 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center|start"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/navi">
+            android:tint="@android:color/secondary_text_dark"
+            app:srcCompat="@drawable/cafe_search">
 
         </ImageView>
 
@@ -34,7 +37,9 @@
             android:layout_weight="0.2"
             android:background="#005A2B01"
             android:gravity="center|start"
-            android:text="부산시 연제구 연수로 130"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:text="카페 검색하기"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

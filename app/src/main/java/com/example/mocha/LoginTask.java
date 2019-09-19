@@ -12,7 +12,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.net.HttpCookie;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -71,8 +70,14 @@ public class LoginTask extends AsyncTask<String, String, String> {
 
                 JSONObject res = new JSONObject(buffer.toString());
                 String cookieValue = res.getString("token");
+
+
+
                 CookieManager.getInstance().removeAllCookie();
                 CookieManager.getInstance().setCookie(String.valueOf(url), cookieValue);
+
+                System.out.println("TESTLOG2"+buffer.toString());
+
 
                 return buffer.toString();//서버로 부터 받은 값을 리턴해줌 아마 OK!!가 들어올것임
 
@@ -98,6 +103,7 @@ public class LoginTask extends AsyncTask<String, String, String> {
 
         return null;
     }
+
 
     @Override
     protected void onPostExecute(String result) {
