@@ -4,30 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@drawable/loginbg"
     tools:context=".SignupActivity">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="179dp"
+            android:layout_marginRight="179dp"
+            android:text="회원가입"
+            android:textColor="#80FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.254"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/signupid_layout"
-        android:layout_width="245dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toStartOf="@id/checkid"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="200dp"
+        android:alpha="0.5"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/signuppassword_layout"
+        app:layout_constraintEnd_toStartOf="@+id/checkid"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/signuppassword_layout"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signupid"
-            android:layout_width="240dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID"
-            android:selectAllOnFocus="true" />
+            android:hint="아이디"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:textColor="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -35,16 +63,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
-        android:text="checkID"
+        android:background="#00FFFFFF"
+        android:text="중복검사"
+        android:textColor="#80FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/signuppassword_layout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintVertical_bias="0.689"
+        tools:layout_constraintHorizontal_bias="1.0" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/signuppassword_layout"
@@ -54,6 +86,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
 
+        android:alpha="0.5"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupid_layout">
@@ -62,10 +96,11 @@
             android:id="@+id/signuppassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password "
+            android:hint="비밀번호"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="true"
+            android:textColor="#FFFFFF" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +112,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
 
+        android:alpha="0.5"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signuppassword_layout">
@@ -85,10 +122,11 @@
             android:id="@+id/checkpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Check Password "
+            android:hint="비밀번호 확인"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="true"
+            android:textColor="#FFFFFF" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,6 +138,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
 
+        android:alpha="0.5"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkpassword_layout">
@@ -108,10 +148,11 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name "
+            android:hint="닉네임"
             android:imeOptions="actionDone"
             android:inputType="textPersonName"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="true"
+            android:textColor="#FFFFFF" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,6 +164,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
 
+        android:alpha="0.5"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_layout">
@@ -131,10 +174,11 @@
             android:id="@+id/tel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tel "
+            android:hint="전화번호"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="true"
+            android:textColor="#FFFFFF" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -148,15 +192,17 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="signup"
+        android:background="#00FFFFFF"
+        android:text="회원가입"
+        android:textColor="#80FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tel_layout"
         app:layout_constraintVertical_bias="0.074" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

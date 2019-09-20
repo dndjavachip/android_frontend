@@ -54,7 +54,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         usernameInput = (EditText) findViewById(R.id.username);
         passwordInput = (EditText) findViewById(R.id.password);
-        remember = (CheckBox) findViewById(R.id.autologin);
         login = (Button) findViewById(R.id.login);
 
         login.setOnClickListener(this);
@@ -132,9 +131,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.signup: //회원가입화면 전환
-                Intent intentSignUp = new Intent(getApplicationContext(), SignupActivity.class);
-
-                startActivity(intentSignUp);
+                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+                overridePendingTransition(R.anim.slide_right, R.anim.slide_left);
+                finish();
                 break;
 
         }
