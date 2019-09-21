@@ -27,6 +27,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".InformationActivity" />
         <activity android:name=".SearchActivity" />
+        <activity android:name=".Main2Activity" />
     </application>
 
 </manifest>
