@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 
-    public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         Context context;
         List<CardModel> datas;
 
@@ -40,6 +40,14 @@ import java.util.List;
         public  class ListViewHolder extends RecyclerView.ViewHolder {
 
             public ListViewHolder(View view) {
+                super(view);
+            }
+
+        }
+
+        public  class RecommandViewHolder extends RecyclerView.ViewHolder {
+
+            public RecommandViewHolder(View view) {
                 super(view);
             }
 
@@ -76,6 +84,12 @@ import java.util.List;
         else if(viewType ==3) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_gps,parent,false);
             return new SearchViewHolder(view);
+        }
+
+        else if(viewType == 2) {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_recommand,parent,false);
+            return new RecommandViewHolder(view);
+
         }
 
         else {

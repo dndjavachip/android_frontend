@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         datas.add(new CardModel(card0_raw,0));
         datas.add(new CardModel("test",3));
         datas.add(new CardModel("test",1));
-        datas.add(new CardModel("test",1));
+        datas.add(new CardModel("test",2));
 
         adapter = new ListAdapter(this,datas);
         recyclerview.setAdapter(adapter);
